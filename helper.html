@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IXL</title>
+<style>
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at center, #0a0a0a, #000000);
+    color: white;
+    overflow-x: hidden;
+  }
+
+  /* Top menu */
+  header {
+    width: 100%;
+    background-color: #111;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    z-index: 1000;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  /* Animated underline on hover */
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s;
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  nav a:hover {
+    color: black;
+    background-color: white;
+    box-shadow: 0 0 15px white;
+  }
+
+  /* Main content */
+  main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 80px; /* offset for fixed header */
+    text-align: center;
+  }
+
+  /* "Nothing to see here" text */
+  .nothing {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 0 20px white, 0 0 40px rgba(255,255,255,0.5);
+    animation: shinePulse 2s infinite;
+  }
+
+  /* Shine pulse animation */
+  @keyframes shinePulse {
+    0%, 100% {
+      text-shadow: 0 0 20px white, 0 0 40px rgba(255,255,255,0.5);
+      transform: scale(1);
+    }
+    50% {
+      text-shadow: 0 0 40px white, 0 0 80px rgba(255,255,255,0.7);
+      transform: scale(1.05);
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="helper.html">Helper</a>
+  </nav>
+</header>
+
+<main>
+  <div class="nothing">nothing to see here..</div>
+</main>
+
+</body>
+</html>
